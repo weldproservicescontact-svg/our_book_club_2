@@ -105,17 +105,11 @@ export default function HomePage() {
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
-            backgroundImage: 'url(/golden_pages.jpg)',
-            backgroundSize: 'contain',
-            backgroundPosition: 'center 40%',
+            backgroundImage: 'url(/Screenshot_2026-03-06_103113.png)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
-            opacity: 0.22,
-          }}
-        />
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background: 'radial-gradient(ellipse 90% 70% at 50% 45%, rgba(10,8,0,0.1) 0%, rgba(10,8,0,0.88) 100%)',
+            opacity: 0.35,
           }}
         />
 
