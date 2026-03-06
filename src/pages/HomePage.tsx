@@ -64,7 +64,7 @@ export default function HomePage() {
         className="flex items-center justify-between px-6 py-3"
       >
         <div className="flex items-center gap-3">
-          <img src="/golden_pages.jpg" alt="The Golden Pages" style={{ width: 38, height: 38, objectFit: 'cover', borderRadius: '6px' }} />
+          <img src="/golden_pages.jpg" alt="Golden Pages" style={{ width: 38, height: 38, objectFit: 'cover', borderRadius: '6px' }} />
           <span
             style={{
               fontFamily: 'Playfair Display, serif',
@@ -77,7 +77,7 @@ export default function HomePage() {
               fontSize: '18px',
             }}
           >
-            The Golden Pages
+            Golden Pages
           </span>
         </div>
 
@@ -123,7 +123,7 @@ export default function HomePage() {
                 />
                 <img
                   src="/golden_pages.jpg"
-                  alt="The Golden Pages"
+                  alt="Golden Pages"
                   style={{
                     width: 120,
                     height: 120,
@@ -150,7 +150,7 @@ export default function HomePage() {
               }}
               className="text-5xl font-bold mb-3"
             >
-              The Golden Pages
+              Golden Pages
             </h1>
             <p style={{ color: '#6b6045' }} className="text-base">
               Describe the vibe. We'll find your next great read.

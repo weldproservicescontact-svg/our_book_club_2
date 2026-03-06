@@ -30,7 +30,7 @@ export default function RecommendationsPage() {
         className="flex items-center justify-between px-6 py-3"
       >
         <div className="flex items-center gap-3">
-          <img src="/golden_pages.jpg" alt="The Golden Pages" style={{ width: 34, height: 34, objectFit: 'cover', borderRadius: '6px' }} />
+          <img src="/golden_pages.jpg" alt="Golden Pages" style={{ width: 34, height: 34, objectFit: 'cover', borderRadius: '6px' }} />
           <span
             style={{
               fontFamily: 'Playfair Display, serif',
@@ -43,7 +43,7 @@ export default function RecommendationsPage() {
               fontSize: '18px',
             }}
           >
-            The Golden Pages
+            Golden Pages
           </span>
         </div>
 
