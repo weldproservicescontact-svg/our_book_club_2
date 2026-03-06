@@ -23,19 +23,27 @@ export default function RecommendationsPage() {
 
   return (
     <div
-      style={{ backgroundColor: '#0f0f0f', minHeight: '100vh', fontFamily: 'DM Sans, sans-serif' }}
+      style={{ backgroundColor: '#0a0a0a', minHeight: '100vh', fontFamily: 'DM Sans, sans-serif' }}
     >
       <header
-        style={{ borderBottom: '1px solid #2a2a2a' }}
-        className="flex items-center justify-between px-6 py-4"
+        style={{ borderBottom: '1px solid #1e1a0e' }}
+        className="flex items-center justify-between px-6 py-3"
       >
-        <div className="flex items-center gap-2">
-          <img src="/image.png" alt="Folio logo" style={{ width: 28, height: 28, objectFit: 'contain' }} />
+        <div className="flex items-center gap-3">
+          <img src="/golden_pages.jpg" alt="The Golden Pages" style={{ width: 34, height: 34, objectFit: 'cover', borderRadius: '6px' }} />
           <span
-            style={{ fontFamily: 'Playfair Display, serif', color: '#e8c547', fontWeight: 700, letterSpacing: '0.04em' }}
-            className="text-lg"
+            style={{
+              fontFamily: 'Playfair Display, serif',
+              background: 'linear-gradient(135deg, #c9a227 0%, #f0d060 50%, #c9a227 100%)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text',
+              fontWeight: 700,
+              letterSpacing: '0.02em',
+              fontSize: '18px',
+            }}
           >
-            Folio
+            The Golden Pages
           </span>
         </div>
 

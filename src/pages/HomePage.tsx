@@ -41,7 +41,7 @@ export default function HomePage() {
     try {
       const books = await getRecommendations(trimmed);
       navigate('/recommendations', { state: { books } });
-    } catch (err) {
+    } catch {
       setError('Something went wrong. Please try again.');
     } finally {
       setLoading(false);
@@ -56,60 +56,104 @@ export default function HomePage() {
 
   return (
     <div
-      style={{ backgroundColor: '#0f0f0f', minHeight: '100vh', fontFamily: 'DM Sans, sans-serif' }}
+      style={{ backgroundColor: '#0a0a0a', minHeight: '100vh', fontFamily: 'DM Sans, sans-serif' }}
       className="flex flex-col"
     >
       <header
-        style={{ borderBottom: '1px solid #2a2a2a' }}
-        className="flex items-center justify-between px-6 py-4"
+        style={{ borderBottom: '1px solid #1e1a0e' }}
+        className="flex items-center justify-between px-6 py-3"
       >
-        <div className="flex items-center gap-2">
-          <img src="/image.png" alt="Folio logo" style={{ width: 28, height: 28, objectFit: 'contain' }} />
+        <div className="flex items-center gap-3">
+          <img src="/golden_pages.jpg" alt="The Golden Pages" style={{ width: 38, height: 38, objectFit: 'cover', borderRadius: '6px' }} />
           <span
-            style={{ fontFamily: 'Playfair Display, serif', color: '#e8c547', fontWeight: 700, letterSpacing: '0.04em' }}
-            className="text-lg"
+            style={{
+              fontFamily: 'Playfair Display, serif',
+              background: 'linear-gradient(135deg, #c9a227 0%, #f0d060 50%, #c9a227 100%)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text',
+              fontWeight: 700,
+              letterSpacing: '0.02em',
+              fontSize: '18px',
+            }}
           >
-            Folio
+            The Golden Pages
           </span>
         </div>
 
         <Link
           to="/queue"
           style={{
-            color: '#e8c547',
-            border: '1px solid #e8c547',
+            color: '#c9a227',
+            border: '1px solid #c9a227',
             borderRadius: '6px',
             fontFamily: 'DM Sans, sans-serif',
             fontWeight: 500,
             textDecoration: 'none',
-            transition: 'background-color 0.2s ease',
+            transition: 'all 0.2s ease',
+            fontSize: '14px',
           }}
-          className="flex items-center gap-2 py-2 px-4 text-sm hover:bg-yellow-400 hover:text-black"
+          className="flex items-center gap-2 py-2 px-4 hover:bg-yellow-600 hover:text-black hover:border-yellow-600"
         >
           <BookMarked size={14} />
           My Queue
         </Link>
       </header>
 
-      <main className="flex-1 flex items-center justify-center px-6 py-16">
-        <div className="w-full max-w-xl">
-          <div className="mb-10 text-center">
-            <div className="flex items-center justify-center gap-3 mb-4">
-              <img src="/image.png" alt="Folio logo" style={{ width: 56, height: 56, objectFit: 'contain' }} />
-              <h1
-                style={{
-                  fontFamily: 'Playfair Display, serif',
-                  color: '#e8c547',
-                  lineHeight: 1.1,
-                  letterSpacing: '0.05em',
-                }}
-                className="text-5xl font-bold"
-              >
-                Folio
-              </h1>
+      <main className="flex-1 flex flex-col items-center justify-center px-6 py-16 relative overflow-hidden">
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background: 'radial-gradient(ellipse 70% 50% at 50% 0%, rgba(201,162,39,0.08) 0%, transparent 70%)',
+          }}
+        />
+
+        <div className="w-full max-w-xl relative z-10">
+          <div className="mb-12 text-center">
+            <div className="flex justify-center mb-6">
+              <div style={{ position: 'relative', display: 'inline-block' }}>
+                <div
+                  style={{
+                    position: 'absolute',
+                    inset: '-8px',
+                    borderRadius: '20px',
+                    background: 'radial-gradient(circle, rgba(201,162,39,0.25) 0%, transparent 70%)',
+                    filter: 'blur(8px)',
+                  }}
+                />
+                <img
+                  src="/golden_pages.jpg"
+                  alt="The Golden Pages"
+                  style={{
+                    width: 120,
+                    height: 120,
+                    objectFit: 'cover',
+                    borderRadius: '16px',
+                    border: '1px solid rgba(201,162,39,0.3)',
+                    boxShadow: '0 0 40px rgba(201,162,39,0.2), 0 20px 60px rgba(0,0,0,0.6)',
+                    position: 'relative',
+                    zIndex: 1,
+                  }}
+                />
+              </div>
             </div>
-            <p style={{ color: '#888' }} className="text-lg">
-              Describe the vibe. We'll do the digging.
+
+            <h1
+              style={{
+                fontFamily: 'Playfair Display, serif',
+                background: 'linear-gradient(135deg, #c9a227 0%, #f0d060 45%, #e8c547 70%, #c9a227 100%)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text',
+                lineHeight: 1.1,
+                letterSpacing: '0.02em',
+              }}
+              className="text-5xl font-bold mb-3"
+            >
+              The Golden Pages
+            </h1>
+            <p style={{ color: '#6b6045' }} className="text-base">
+              Describe the vibe. We'll find your next great read.
             </p>
           </div>
 
@@ -127,22 +171,23 @@ export default function HomePage() {
               disabled={loading}
               rows={4}
               style={{
-                backgroundColor: '#1a1a1a',
+                backgroundColor: '#111008',
                 border: error
                   ? '1px solid #e05c5c'
                   : focused
-                  ? '1px solid #e8c547'
-                  : '1px solid #2a2a2a',
-                borderRadius: '8px',
-                color: '#e5e5e5',
+                  ? '1px solid rgba(201,162,39,0.7)'
+                  : '1px solid #231f0f',
+                borderRadius: '10px',
+                color: '#e8dfc0',
                 fontFamily: 'DM Sans, sans-serif',
                 fontSize: '15px',
                 lineHeight: '1.6',
                 resize: 'none',
                 outline: 'none',
                 transition: 'border-color 0.2s ease',
+                boxShadow: focused ? '0 0 0 3px rgba(201,162,39,0.08)' : 'none',
               }}
-              className="w-full p-4 placeholder-gray-600"
+              className="w-full p-4 placeholder-stone-700"
             />
 
             {error && (
@@ -155,15 +200,19 @@ export default function HomePage() {
               onClick={handleSubmit}
               disabled={loading}
               style={{
-                backgroundColor: loading ? '#b99d30' : '#e8c547',
-                color: '#0f0f0f',
-                borderRadius: '8px',
+                background: loading
+                  ? 'linear-gradient(135deg, #7a6215, #a88a20)'
+                  : 'linear-gradient(135deg, #c9a227 0%, #f0d060 50%, #c9a227 100%)',
+                color: '#0a0800',
+                borderRadius: '10px',
                 fontFamily: 'DM Sans, sans-serif',
-                fontWeight: 500,
+                fontWeight: 600,
                 fontSize: '15px',
                 cursor: loading ? 'default' : 'pointer',
                 border: 'none',
-                transition: 'background-color 0.2s ease, transform 0.1s ease',
+                transition: 'opacity 0.2s ease, transform 0.1s ease',
+                boxShadow: loading ? 'none' : '0 4px 20px rgba(201,162,39,0.3)',
+                letterSpacing: '0.02em',
               }}
               className="w-full py-3 px-6 flex items-center justify-center gap-2 hover:brightness-110 active:scale-95"
             >
@@ -173,7 +222,7 @@ export default function HomePage() {
                     style={{
                       width: 16,
                       height: 16,
-                      border: '2px solid #0f0f0f',
+                      border: '2px solid #0a0800',
                       borderTopColor: 'transparent',
                       borderRadius: '50%',
                       display: 'inline-block',
@@ -187,13 +236,16 @@ export default function HomePage() {
               )}
             </button>
 
-            <p style={{ color: '#555' }} className="text-xs text-center">
+            <p style={{ color: '#3d3520' }} className="text-xs text-center">
               Tip: Press Cmd+Enter to submit
             </p>
           </div>
 
-          <div className="mt-8">
-            <p style={{ color: '#555', fontFamily: 'DM Sans, sans-serif' }} className="text-xs uppercase tracking-widest mb-3">
+          <div className="mt-10">
+            <p
+              style={{ color: '#4a3f20', fontFamily: 'DM Sans, sans-serif' }}
+              className="text-xs uppercase tracking-widest mb-3"
+            >
               Not sure? Try one of these
             </p>
             <div className="flex flex-wrap gap-2">
@@ -204,15 +256,15 @@ export default function HomePage() {
                   disabled={loading}
                   style={{
                     backgroundColor: 'transparent',
-                    border: '1px solid #2a2a2a',
+                    border: '1px solid #231f0f',
                     borderRadius: '20px',
-                    color: '#888',
+                    color: '#6b6045',
                     fontFamily: 'DM Sans, sans-serif',
                     fontSize: '13px',
                     cursor: loading ? 'default' : 'pointer',
                     transition: 'border-color 0.15s ease, color 0.15s ease',
                   }}
-                  className="py-1.5 px-3 hover:border-yellow-400 hover:text-yellow-400"
+                  className="py-1.5 px-3 hover:border-yellow-600 hover:text-yellow-500"
                 >
                   {s}
                 </button>
