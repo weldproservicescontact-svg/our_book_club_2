@@ -104,40 +104,22 @@ export default function HomePage() {
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
-            background: 'radial-gradient(ellipse 70% 50% at 50% 0%, rgba(201,162,39,0.08) 0%, transparent 70%)',
+            backgroundImage: 'url(/golden_pages.jpg)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+            opacity: 0.18,
+          }}
+        />
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background: 'radial-gradient(ellipse 80% 60% at 50% 50%, rgba(10,8,0,0.2) 0%, rgba(10,8,0,0.85) 100%)',
           }}
         />
 
         <div className="w-full max-w-xl relative z-10">
           <div className="mb-12 text-center">
-            <div className="flex justify-center mb-6">
-              <div style={{ position: 'relative', display: 'inline-block' }}>
-                <div
-                  style={{
-                    position: 'absolute',
-                    inset: '-8px',
-                    borderRadius: '20px',
-                    background: 'radial-gradient(circle, rgba(201,162,39,0.25) 0%, transparent 70%)',
-                    filter: 'blur(8px)',
-                  }}
-                />
-                <img
-                  src="/golden_pages.jpg"
-                  alt="Golden Pages"
-                  style={{
-                    width: 120,
-                    height: 120,
-                    objectFit: 'cover',
-                    borderRadius: '16px',
-                    border: '1px solid rgba(201,162,39,0.3)',
-                    boxShadow: '0 0 40px rgba(201,162,39,0.2), 0 20px 60px rgba(0,0,0,0.6)',
-                    position: 'relative',
-                    zIndex: 1,
-                  }}
-                />
-              </div>
-            </div>
-
             <h1
               style={{
                 fontFamily: 'Playfair Display, serif',
