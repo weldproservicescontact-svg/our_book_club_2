@@ -67,14 +67,15 @@ export default function HomePage() {
           <img src="/golden_pages.jpg" alt="Golden Pages" style={{ width: 38, height: 38, objectFit: 'cover', borderRadius: '6px' }} />
           <span
             style={{
-              fontFamily: 'Playfair Display, serif',
+              fontFamily: 'Pinyon Script, cursive',
               background: 'linear-gradient(135deg, #c9a227 0%, #f0d060 50%, #c9a227 100%)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
               backgroundClip: 'text',
-              fontWeight: 700,
+              fontWeight: 400,
               letterSpacing: '0.02em',
-              fontSize: '18px',
+              fontSize: '26px',
+              lineHeight: 1,
             }}
           >
             Golden Pages
@@ -105,16 +106,16 @@ export default function HomePage() {
           className="absolute inset-0 pointer-events-none"
           style={{
             backgroundImage: 'url(/golden_pages.jpg)',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
+            backgroundSize: 'contain',
+            backgroundPosition: 'center 40%',
             backgroundRepeat: 'no-repeat',
-            opacity: 0.18,
+            opacity: 0.22,
           }}
         />
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
-            background: 'radial-gradient(ellipse 80% 60% at 50% 50%, rgba(10,8,0,0.2) 0%, rgba(10,8,0,0.85) 100%)',
+            background: 'radial-gradient(ellipse 90% 70% at 50% 45%, rgba(10,8,0,0.1) 0%, rgba(10,8,0,0.88) 100%)',
           }}
         />
 
@@ -122,15 +123,16 @@ export default function HomePage() {
           <div className="mb-12 text-center">
             <h1
               style={{
-                fontFamily: 'Playfair Display, serif',
+                fontFamily: 'Pinyon Script, cursive',
                 background: 'linear-gradient(135deg, #c9a227 0%, #f0d060 45%, #e8c547 70%, #c9a227 100%)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',
                 lineHeight: 1.1,
                 letterSpacing: '0.02em',
+                fontWeight: 400,
               }}
-              className="text-5xl font-bold mb-3"
+              className="text-7xl mb-3"
             >
               Golden Pages
             </h1>
